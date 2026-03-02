@@ -1,0 +1,95 @@
+/* Futuristic AI × Elegant Dark × Subtle Neon Glow */
+
+
+
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0B0F19 0%, #141A2A 100%);
+  --primary-accent: #00eaff;
+  --secondary-accent: #a259ff;
+  --glass-bg: rgba(20, 26, 42, 0.7);
+  --glow-border: 0 0 16px 2px var(--primary-accent);
+  --grid-overlay: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px);
+  --font-headline: 'Space Grotesk', 'Inter', 'Sora', sans-serif;
+  --font-body: 'Inter', 'Sora', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-gradient);
+  color: #f5f6fa;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: var(--glow-border);
+}
+
+.glow {
+  box-shadow: 0 0 24px 4px var(--primary-accent);
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: var(--grid-overlay);
+  z-index: 0;
+}
+
+.headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--primary-accent);
+  text-shadow: 0 2px 24px var(--primary-accent);
+}
+
+.subheading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--secondary-accent);
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary-accent);
+  color: #0B0F19;
+  box-shadow: 0 0 12px 2px var(--primary-accent);
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.cta-btn.secondary {
+  background: var(--secondary-accent);
+  color: #fff;
+  box-shadow: 0 0 12px 2px var(--secondary-accent);
+}
+
+@media (max-width: 900px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+  .subheading {
+    font-size: 1.1rem;
+  }
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
