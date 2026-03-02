@@ -154,13 +154,12 @@ export default function HeroSection() {
       <div
         style={{
           position: "absolute",
-          right: "15%",
+          right: isMobile ? 0 : "15%",
           bottom: 0,
-          width: "clamp(260px, 34%, 460px)",
-          height: "100%",
+          width: isMobile ? "clamp(160px, 52%, 240px)" : "clamp(260px, 34%, 460px)",
+          height: isMobile ? "70%" : "100%",
           zIndex: 4,
           pointerEvents: "none",
-          display: isMobile ? "none" : undefined,
         }}
       >
         {/* Layer 1: Ground-level atmospheric warmth */}
@@ -218,11 +217,12 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* ── Floating annotation badges ── */}
+        {/* ── Floating annotation badges — desktop only ── */}
 
         {/* Badge 1: Placement — top-left of figure */}
         <div className="float-badge" style={{
           position: "absolute", top: "16%", left: "-10%",
+          display: isMobile ? "none" : undefined,
           zIndex: 8, pointerEvents: "all",
           background: "rgba(240,235,225,0.94)",
           backdropFilter: "blur(10px)",
@@ -237,6 +237,7 @@ export default function HeroSection() {
         {/* Badge 2: Package — mid-right of figure */}
         <div className="float-badge" style={{
           position: "absolute", top: "38%", right: "12%",
+          display: isMobile ? "none" : undefined,
           zIndex: 8, pointerEvents: "all",
           background: "#1C1917",
           padding: "11px 15px",
@@ -248,12 +249,12 @@ export default function HeroSection() {
         {/* Badge 3: Hours + Projects — lower-left */}
         <div className="float-badge" style={{
           position: "absolute", bottom: "28%", left: "-8%",
+          display: isMobile ? "none" : "flex", alignItems: "center", gap: "12px",
           zIndex: 8, pointerEvents: "all",
           background: "rgba(240,235,225,0.90)",
           backdropFilter: "blur(8px)",
           border: "1px solid rgba(139,58,38,0.16)",
           padding: "10px 14px",
-          display: "flex", alignItems: "center", gap: "12px",
         }}>
           <div>
             <p style={{ fontFamily: "var(--font-display,'Space Grotesk')", fontWeight: 700, fontSize: "1.1rem", letterSpacing: "-0.03em", color: "#1C1917", lineHeight: 1 }}>180+</p>
